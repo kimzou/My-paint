@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#canvas-default {
+    z-index: 1;
+}
+
+#warp {
+    position: relative;
+}
+
+#tools { background-color: darkslategrey; }
+
+button, #color, #file-label {
+    border-radius: 5px;
+    background-color: white;
+    margin: 15px 10px;
+}
+
+#size { border: black 2px solid; }
+
+#load { 
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+#file-label {
+    display: inline-block;
+    border: 1px solid lightgrey;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-image: initial;
+}
+
+button, input, #file-label {
+    cursor: pointer;
+}
+
+.right { float: right; }
+
+.hide { display: none; }
+
+.show { display: block; }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paint</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div id="tools">
+        <button id="crayon" class="brushes" title="Crayon">
+            <img src="icons/pencil-alt-solid.svg" width="25" alt="pencil">
+        </button>
+        <button id="eraser" class="brushes" title="Gomme">
+            <img src="icons/eraser-solid.svg" width="25" alt="eraser">
+        </button>
+        <button id="line" class="brushes" title="Ligne">
+            <img src="icons/line.svg" width="25" alt="line">
+        </button>
+        <button id="rec" class="brushes" title="Rectangle">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjIgMnYyMGgtMjB2LTIwaDIwem0yLTJoLTI0djI0aDI0di0yNHoiLz48L3N2Zz4=">
+        </button>
+        <button id="fillRec" class="brushes" title="Rectangle plein">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgMGgtMjR2MjRoMjR2LTI0eiIvPjwvc3ZnPg==">
+        </button>
+        <button id="cir" class="brushes" title="Cercle">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xMiAwYzYuNjIzIDAgMTIgNS4zNzcgMTIgMTJzLTUuMzc3IDEyLTEyIDEyLTEyLTUuMzc3LTEyLTEyIDUuMzc3LTEyIDEyLTEyem0wIDFjNi4wNzEgMCAxMSA0LjkyOSAxMSAxMXMtNC45MjkgMTEtMTEgMTEtMTEtNC45MjktMTEtMTEgNC45MjktMTEgMTEtMTF6Ii8+PC9zdmc+">
+        </button>
+        <button id="fillCir" class="brushes" title="Cercle plein">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIvPjwvc3ZnPg==">
+        </button>
+        <input type="color" id="color" title="Couleur">
+        <input type="range" id="size" min="1" max="50px" step="1" value="10" title="Taille du pinceau">
+        <button id="reset" class="right" title="Effacer le canvas">
+            <img src="icons/redo-solid.svg" width="24" height="24" alt="reset">
+        </button>
+        <button id="layer" class="right" title="Ajouter un calque">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNOSAxMmMwLS41NTIuNDQ4LTEgMS4wMDEtMXMuOTk5LjQ0OC45OTkgMS0uNDQ2IDEtLjk5OSAxLTEuMDAxLS40NDgtMS4wMDEtMXptNi4yIDBsLTEuNyAyLjYtMS4zLTEuNi0zLjIgNGgxMGwtMy44LTV6bTguOC01djE0aC0yMHYtM2gtNHYtMTVoMjF2NGgzem0tMjAgOXYtOWgxNXYtMmgtMTd2MTFoMnptMTgtN2gtMTZ2MTBoMTZ2LTEweiIvPjwvc3ZnPg==">
+        </button>
+        <button id="save" class="right" title="Sauvegarder">
+            <a href="#" id="link" download="image.png">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTUuMDAzIDNoMi45OTd2NWgtMi45OTd2LTV6bTguOTk3IDF2MjBoLTI0di0yNGgyMGw0IDR6bS0xOSA1aDE0di03aC0xNHY3em0xNiA0aC0xOHY5aDE4di05eiIvPjwvc3ZnPg==">       
+            </a> 
+        </button>
+        <label for="load" id="file-label" class="right" title="Importer une image">
+            <img width="24" height="24" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMS45NzkgOGwtLjk3OS02aDYuOTcyYzEuMjY1IDEuNTgzIDEuMzI3IDIgMy4zMDYgMmgxMS43MjJsLS45NiA0aC0yLjA0bC40NjktMmgtOS4xOTFjLTIuMzI2IDAtMy4xNjYtLjYxMi00LjI3OC0yaC0zLjY5NGwuNjk0IDRoLTIuMDIxem0yMi4wMjEgMmwtMiAxMmgtMjBsLTItMTJoNi4yNzhsMi4zMDgtMyAzLjkgM2gxLjk3bC0xLjQyOS0xLjA5NyAxLjQ2NS0xLjkwMyAzLjkgM2g1LjYwOHptLTIuMzMxIDJoLTE5LjMzOGwxLjM4NSA4aDE2LjU2OGwxLjM4NS04eiIvPjwvc3ZnPg==">
+            <input type="file" id="load">
+        </label>
+    </div>
+
+    <div id="warp">
+        <canvas id="canvas-default" class="canvas" height="500px" width="500px">
+        </canvas>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
